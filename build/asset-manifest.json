@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reacthw0802/static/css/main.b1090ede.css",
+    "main.js": "/reacthw0802/static/js/main.38183306.js",
+    "index.html": "/reacthw0802/index.html",
+    "main.b1090ede.css.map": "/reacthw0802/static/css/main.b1090ede.css.map",
+    "main.38183306.js.map": "/reacthw0802/static/js/main.38183306.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1090ede.css",
+    "static/js/main.38183306.js"
+  ]
+}

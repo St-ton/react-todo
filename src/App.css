@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  background: yellow;
+  color: black;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.span_text {
+  font-weight: 900;
+  color: blue;
+}
+
+body {
+  background-color: #333;
+  color: aliceblue;
+}
+
+.footer {
+  width: 100%;
+  margin-bottom: -20px;
+}
+
+.App {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  position: relative;
+  padding: 20px 50px;
+  background-color: #1abc9c;
+}
+
+.taskBg {
+  border-radius: 6px;
+  height: fit-content;
+  margin: 15px;
+  padding: 10px 140px 10px 15px;
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+  width: fit-content;
+}
+
+.import {
+  background-color: #e74c3c;
+}
+
+.curr {
+  background-color: #1abc9c;
+}
+
+.taskBg div {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  margin-bottom: 20px;
+  max-width: 545px;
+  border: 1px solid black;
+}
+
+.taskNumber {
+  color: #999;
+  border: 2px solid #999;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskBg .taskText {
+  flex: 1;
+}
+
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.taskBg .iconsWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  display: inline-block;
+}
+
+.taskBg .iconsWrap span {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #999;
+  opacity: 0.4;
+}
+
+.taskBg:hover .iconsWrap span {
+  color: yellow;
+  opacity: 1;
+}
+
+.ch_importance,
+.ch_calendar {
+  max-width: 180px;
+  margin: 0 5px;
+}
+.select {
+  width: 150px;
+  color: black;
+}
+
+.ch_importance select,
+.ch_calendar select {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.import {
+  background-color: #e74c3c;
+}
+
+.curr {
+  background-color: #1abc9c;
+}
+
+.btn-success {
+  background-color: #1abc9c;
+  width: 163px;
+  height: 45px;
+  border-radius: 23px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.col {
+  max-width: 545px;
+}
+
+.col-auto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.row {
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+.formTable {
+  background: #ecf0f1;
+  padding: 20px 62px 10px 62px;
+  border-radius: 20px;
+  max-width: 1088px;
+  margin: 10px auto;
+}
+
+.days {
+  display: flex;
+  max-width: 1088px;
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px auto;
+}
+
+.days p {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin: 0;
+  background: #34495e;
+  border-radius: 20px 0px 0px 20px;
+  width: 80px;
+  height: auto;
+  padding: 5px 5px 5px 30px;
+  border: 1px solid #34495e;
+  color: white;
+  cursor: pointer;
+}
+
+.dayName {
+  display: flex;
+  position: relative;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.del_day {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: px;
+  left: 0px;
+  color: #e74c3c;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.dayName:hover .del_day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dayName:hover p {
+  text-decoration: line-through;
+  color: #e74c3c;
+}
+
+.taskCont {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
