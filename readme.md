@@ -1,8 +1,8 @@
 ### HomeWork React
 
 HW-0802
-<!-- [-Code-](<https://github.com/St-ton/ReactHW0802/edit/master/src>) | -->
-<!-- [-WWW-](<>)<br/> -->
+[-Code-](<https://github.com/St-ton/ReactHW0802/edit/master/src>) |
+[-WWW-](<>)<br/>
 
 Необходимо реализовать приложение, позволяющее добавлять дела.
 При добавлении дела на определенный день недели добавляется соответствующий блок с днем недели.
