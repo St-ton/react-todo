@@ -8,7 +8,7 @@ export default function ToDoOneDay({ toDoNew, markDone, setUpdateData, deleteTas
     <>
       <div className="dayName" onClick={() => deleteDay(toDoNew[0].valueDate)}>
         {toDoNew && toDoNew.length ? (
-          <p>{(toDoNew[0].valueDate === '' ? 'NoWeekDay' : toDoNew[0].valueDate).toUpperCase()}</p>
+          <p>{(toDoNew[0].valueDate === '' ? '!!!' : toDoNew[0].valueDate).toUpperCase()}</p>
         ) : (
           ''
         )}

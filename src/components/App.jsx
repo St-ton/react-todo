@@ -22,12 +22,14 @@ function App() {
   // const [day, setDay] = useState('');
 
   const addTask = () => {
-    if (value === 'Select') {
-      alert('You did not select Importance!');
-    } else if (valueDate === 'Select') {
-      alert('You did not select Week Day!');
-    } else if (newTask === '') {
-      alert('You did not write Task!');
+    if (
+      value === 'Select' ||
+      value === '' ||
+      valueDate === 'Select' ||
+      valueDate === '' ||
+      newTask === ''
+    ) {
+      alert('Please fill in all fields...');
     } else {
       let num = toDo.length + 1;
       let newEntry = {
