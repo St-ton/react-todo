@@ -3,9 +3,9 @@ export default function AddTaskForm({
   setNewTask,
   addTask,
   value,
-  chengeSelect,
+  changeSelect,
   valueDate,
-  chengeDate,
+  changeDate,
 }) {
   return (
     <div>
@@ -13,19 +13,17 @@ export default function AddTaskForm({
         <div className="col">
           <div className="row">
             <div className="row ch_importance">
-              <select name="import" required value={value} onChange={e => chengeSelect(e)}>
-                <option selected value="Select">
-                  Importance
-                </option>
+              <p>Importance</p>
+              <select name="import" value={value} onChange={e => changeSelect(e)}>
+                <option selected>Select</option>
                 <option value="important">important</option>
                 <option value="current">non-important</option>
               </select>
             </div>
             <div className="row ch_calendar">
-              <select required value={valueDate} onChange={e => chengeDate(e)}>
-                <option selected value="Select">
-                  Week Day
-                </option>
+              <p>Week Day</p>
+              <select value={valueDate} onChange={e => changeDate(e)}>
+                <option selected>Select</option>
                 <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday</option>
                 <option value="wednesday">Wednesday</option>
@@ -37,6 +35,7 @@ export default function AddTaskForm({
             </div>
           </div>
           <input
+            required="required"
             placeholder="Task name....."
             value={newTask}
             onChange={e => setNewTask(e.target.value)}

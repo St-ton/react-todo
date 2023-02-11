@@ -137,7 +137,7 @@ body {
 .btn-success {
   background-color: #1abc9c;
   width: 163px;
-  height: 45px;
+  height: 50px;
   border-radius: 23px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -189,6 +189,16 @@ body {
   border: 1px solid #34495e;
   color: white;
   cursor: pointer;
+}
+.ch_importance p,
+.ch_calendar p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  /* color: black; */
+  color: #1abc9c;
 }
 
 .dayName {

@@ -22,7 +22,13 @@ function App() {
   // const [day, setDay] = useState('');
 
   const addTask = () => {
-    if (newTask) {
+    if (value === 'Select') {
+      alert('You did not select Importance!');
+    } else if (valueDate === 'Select') {
+      alert('You did not select Week Day!');
+    } else if (newTask === '') {
+      alert('You did not write Task!');
+    } else {
       let num = toDo.length + 1;
       let newEntry = {
         id: num,
@@ -31,20 +37,13 @@ function App() {
         value: value,
         valueDate: valueDate,
       };
-
-      // if (value === '') {
-      //   alert('Select please Week Day');
-      // } else if (valueDate === '') {
-      //   alert('Select please Importance');
-      // } else {
-
       setToDo([...toDo, newEntry]);
       setNewTask('');
     }
   };
 
   const deleteTask = id => {
-    let conf = window.confirm('Are you DELETE Task ?');
+    let conf = window.confirm('Are you sure to DELETE the Task ?');
     if (conf) {
       let newTasks = toDo.filter(task => task.id !== id);
       setToDo(newTasks);
@@ -52,7 +51,7 @@ function App() {
   };
 
   const deleteDay = value => {
-    let conf = window.confirm('Are you DELETE Week Day ?');
+    let conf = window.confirm('Are you sure to DELETE the Day ?');
     if (conf) {
       let newToDo = toDo.filter(task => task.valueDate !== value);
       setToDo(newToDo);
@@ -88,12 +87,20 @@ function App() {
     setToDo(updateObj);
     setUpdateData('');
   };
-  function chengeSelect(event) {
-    setValue(event.target.value);
+  function changeSelect(event) {
+    if (event.target.value === '') {
+      alert('Select please Importance');
+    } else {
+      setValue(event.target.value);
+    }
   }
 
-  function chengeDate(event) {
-    setValueDate(event.target.value);
+  function changeDate(event) {
+    if (event.target.value === '') {
+      alert('Select please Week Day');
+    } else {
+      setValueDate(event.target.value);
+    }
   }
 
   return (
@@ -113,8 +120,8 @@ function App() {
           updateTask={updateTask}
           cancelUpdate={cancelUpdate}
           value={value}
-          chengeSelect={chengeSelect}
-          chengeDate={chengeDate}
+          changeSelect={changeSelect}
+          changeDate={changeDate}
           valueDate={valueDate}
         />
       ) : (
@@ -123,8 +130,8 @@ function App() {
           setNewTask={setNewTask}
           addTask={addTask}
           value={value}
-          chengeSelect={chengeSelect}
-          chengeDate={chengeDate}
+          changeSelect={changeSelect}
+          changeDate={changeDate}
           valueDate={valueDate}
         />
       )}
