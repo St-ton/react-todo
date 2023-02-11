@@ -74,6 +74,9 @@ function App() {
     setUpdateData('');
   };
 
+  // if (e.target.value === '') {
+  //   alert('Write please Task ...');
+  // }
   const changeTask = e => {
     let newEntry = {
       id: updateData.id,
@@ -83,27 +86,32 @@ function App() {
     setUpdateData(newEntry);
   };
 
-  const updateTask = e => {
-    let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
-    let updateObj = [...filterRecords, updateData];
-    setToDo(updateObj);
-    setUpdateData('');
-  };
   function changeSelect(event) {
-    if (event.target.value === '') {
-      alert('Select please Importance');
-    } else {
-      setValue(event.target.value);
-    }
+    setValue(event.target.value);
+    //   if (event.target.value === '') {
+    //     alert('Select please Importance');
+    //   }
   }
 
   function changeDate(event) {
-    if (event.target.value === '') {
-      alert('Select please Week Day');
-    } else {
-      setValueDate(event.target.value);
-    }
+    setValueDate(event.target.value);
+    //   if (event.target.value === '') {
+    //     alert('Select please Week Day');
+    //   }
   }
+
+  const updateTask = event => {
+    console.log(`11 ${updateData.id} `);
+    console.log(`21 ${updateData.status}`);
+    console.log(`31 ${value}`);
+    console.log(`41 ${valueDate}`);
+    console.log(`51 ${[...toDo]}`);
+
+    let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
+    let updateObj = [...filterRecords, updateData];
+    setToDo(updateObj);
+    // setUpdateData('');
+  };
 
   return (
     <div className="container App">

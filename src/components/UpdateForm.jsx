@@ -1,4 +1,4 @@
-const UpdateForm = ({
+export default function UpdateForm({
   updateData,
   changeTask,
   updateTask,
@@ -7,21 +7,31 @@ const UpdateForm = ({
   changeSelect,
   valueDate,
   changeDate,
-}) => {
+}) {
   return (
     <>
       <div className="row formTable">
         <div className="col">
           <input
             value={updateData && updateData.title}
-            onChange={e => changeTask(e)}
+            onChange={e => {
+              changeTask(e);
+              console.log(`1 ${e.target.value}`);
+            }}
             className="form-control form-control-lg"
           />
 
           <div className="row">
             <div className="row ch_importance">
               <p>Importance</p>
-              <select name="import" value={value} onChange={e => changeSelect(e)}>
+              <select
+                name="import"
+                value={value}
+                onChange={e => {
+                  changeSelect(e);
+                  console.log(`2 ${e.target.value}`);
+                }}
+              >
                 <option selected>Select</option>
                 <option value="important">important</option>
                 <option value="current">non-important</option>
@@ -29,7 +39,13 @@ const UpdateForm = ({
             </div>
             <div className="row ch_calendar">
               <p>Week Day</p>
-              <select value={valueDate} onChange={e => changeDate(e)}>
+              <select
+                value={valueDate}
+                onChange={e => {
+                  changeDate(e);
+                  console.log(`3 ${e.target.value}`);
+                }}
+              >
                 <option selected>Select</option>
                 <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday</option>
@@ -54,6 +70,4 @@ const UpdateForm = ({
       <br />
     </>
   );
-};
-
-export default UpdateForm;
+}
