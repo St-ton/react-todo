@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddTaskForm from './AddTaskForm.jsx';
 import UpdateForm from './UpdateForm.jsx';
 import ToDo from './ToDo.jsx';
@@ -18,6 +18,15 @@ function App() {
   const [updateData, setUpdateData] = useState('');
   const [value, setValue] = useState('');
   const [valueDate, setValueDate] = useState('');
+
+  useEffect(() => {
+    const storedToDo = JSON.parse(localStorage.getItem('toDo')) || [];
+    setToDo(storedToDo);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('toDo', JSON.stringify(toDo));
+  }, [toDo]);
 
   const addTask = e => {
     e.preventDefault();
