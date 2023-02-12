@@ -219,7 +219,8 @@ body {
   border-radius: 20px 0px 0px 20px;
   width: 80px;
   height: auto;
-  padding: 5px 5px 5px 30px;
+  padding: 5px;
+  padding-left: 25px;
   border: 1px solid #34495e;
   color: white;
   /* cursor: pointer; */
@@ -239,7 +240,7 @@ body {
 .dayName {
   display: flex;
   position: relative;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 900;
 }
 
@@ -247,7 +248,7 @@ body {
   display: none;
   position: absolute;
   text-align: center;
-  top: px;
+  top: 0px;
   left: 0px;
   color: #e74c3c;
   width: 40px;
