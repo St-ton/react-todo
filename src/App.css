@@ -47,10 +47,12 @@ body {
 
 .import {
   background-color: #e74c3c;
+  border: 1px solid gray;
 }
 
 .curr {
   background-color: #1abc9c;
+  border: 1px solid gray;
 }
 
 .taskBg div {
@@ -83,9 +85,26 @@ body {
   flex: 1;
 }
 
+.taskBg:has(.done) {
+  background-color: white;
+  border: 1px solid gray;
+}
+
 .taskBg .done .taskText {
+  color: gray;
   text-decoration: line-through;
-  opacity: 0.3;
+  font-style: italic;
+  opacity: 0.4;
+}
+
+.taskBg .done .taskNumber {
+  /* opacity: 0; */
+  display: none;
+}
+
+.taskBg .done .import,
+.taskBg .done .curr {
+  background-color: white;
 }
 
 .taskBg .iconsWrap {
@@ -203,7 +222,7 @@ body {
   padding: 5px 5px 5px 30px;
   border: 1px solid #34495e;
   color: white;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .ch_importance p,
 .ch_calendar p {
@@ -235,15 +254,46 @@ body {
   cursor: pointer;
 }
 
-.dayName:hover .del_day {
+.dayName:hover .del_day,
+.days:hover .del_day {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dayName:hover p {
+.dayName:hover p,
+.days:hover p {
   text-decoration: line-through;
   color: #e74c3c;
+}
+
+.dayName:hover .fa-trash-can,
+.days:hover .dayName .fa-trash-can {
+  animation: trashScale 1.5s linear infinite;
+  /* animation: trashTrans 1.5s linear infinite; */
+}
+
+@keyframes trashScale {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes trashTrans {
+  from {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(10px);
+  }
 }
 
 .taskCont {

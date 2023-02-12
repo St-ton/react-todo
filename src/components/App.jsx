@@ -19,9 +19,8 @@ function App() {
   const [value, setValue] = useState('');
   const [valueDate, setValueDate] = useState('');
 
-  // const [day, setDay] = useState('');
-
-  const addTask = () => {
+  const addTask = e => {
+    e.preventDefault();
     if (
       value === 'Select' ||
       value === '' ||
@@ -100,29 +99,30 @@ function App() {
     //   }
   }
 
-  const updateTask = event => {
-    console.log(`11 ${updateData.id} `);
-    console.log(`21 ${updateData.status}`);
-    console.log(`31 ${value}`);
-    console.log(`41 ${valueDate}`);
-    console.log(`51 ${[...toDo]}`);
-
-    let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
-    let updateObj = [...filterRecords, updateData];
-    setToDo(updateObj);
-    // setUpdateData('');
-  };
+  function updateTask() {
+    let filterTodo = [...toDo].filter(task => task.id !== updateData.id);
+    let editTask = {
+      id: updateData.id,
+      title: updateData.title,
+      status: updateData.status ? true : false,
+      value: value,
+      valueDate: valueDate,
+    };
+    let updateTodo = [...filterTodo, editTask];
+    setToDo(updateTodo);
+    setUpdateData('');
+    //
+    // почему то не сработало, если не фильтровать массив стр. 105 и 113, а сразу перебирать массив и в нем заменить такс исходный на отредактированный
+    // let updateTodo = [...toDo].map((task, i) => (i === updateData.id ? editTask : task));
+    //
+  }
 
   return (
     <div className="container App">
       <div className="text">
-        Для меня это ДЗ оказалось трудное. ToDo мы на уроке рассмотрели, но оно сильно (как мне
-        кажется) отличалось от текущего.На 50% понимал, что и как нужно сделать по архитектуре
-        компонентов. Но реализовать это через код для меня оказалось непосильным.
-        <p>
-          Поэтому обращался за помощью к <span className="span_text">Валерии Куликовой</span>
-        </p>
-        <p>Удаление дня недели работает через наведение на блок с днем недели</p>
+        ToDo мы на уроке рассмотрели поверхностно и оно, как мне кажется, сильно отличалось от
+        текущего. Поэтому обращался за помощью к{' '}
+        <span className="span_text">Валерии Куликовой</span>
       </div>
       {updateData && updateData ? (
         <UpdateForm
@@ -223,5 +223,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

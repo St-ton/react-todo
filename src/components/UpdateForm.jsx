@@ -1,3 +1,4 @@
+import { useState } from 'react';
 export default function UpdateForm({
   updateData,
   changeTask,
@@ -16,7 +17,7 @@ export default function UpdateForm({
             value={updateData && updateData.title}
             onChange={e => {
               changeTask(e);
-              console.log(`1 ${e.target.value}`);
+              // console.log(`1 ${e.target.value}`);
             }}
             className="form-control form-control-lg"
           />
@@ -29,7 +30,7 @@ export default function UpdateForm({
                 value={value}
                 onChange={e => {
                   changeSelect(e);
-                  console.log(`2 ${e.target.value}`);
+                  // console.log(`2 ${e.target.value}`);
                 }}
               >
                 <option selected>Select</option>
@@ -43,7 +44,7 @@ export default function UpdateForm({
                 value={valueDate}
                 onChange={e => {
                   changeDate(e);
-                  console.log(`3 ${e.target.value}`);
+                  // console.log(`3 ${e.target.value}`);
                 }}
               >
                 <option selected>Select</option>
@@ -59,7 +60,11 @@ export default function UpdateForm({
           </div>
         </div>
         <div className="col-auto">
-          <button className="btn btn-lg btn-success" onClick={updateTask}>
+          <button
+            className="btn btn-lg btn-success"
+            onClick={updateTask}
+            // onClick={() => updateTask(id, title, value, valueDate)}
+          >
             Update
           </button>
           <button className="btn btn-lg btn-warning" onClick={cancelUpdate}>

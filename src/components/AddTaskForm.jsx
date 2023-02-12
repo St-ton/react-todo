@@ -14,7 +14,12 @@ export default function AddTaskForm({
           <div className="row">
             <div className="row ch_importance">
               <p>Importance</p>
-              <select name="import" value={value} onChange={e => changeSelect(e)}>
+              <select
+                required="required"
+                name="import"
+                value={value}
+                onChange={e => changeSelect(e)}
+              >
                 <option selected>Select</option>
                 <option value="important">important</option>
                 <option value="current">non-important</option>
@@ -22,7 +27,7 @@ export default function AddTaskForm({
             </div>
             <div className="row ch_calendar">
               <p>Week Day</p>
-              <select value={valueDate} onChange={e => changeDate(e)}>
+              <select required="required" value={valueDate} onChange={e => changeDate(e)}>
                 <option selected>Select</option>
                 <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday</option>
