@@ -70,19 +70,19 @@ body {
   top: 0;
   left: 0;
   color: #999;
-  border-right: 2px solid #999;
-  border-bottom: 2px solid #999;
-  /* border: 1px solid #999; */
-  border-radius: 5px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  border-radius: 0 0 50% 0;
   width: 22px;
   height: 22px;
   display: flex;
   text-align: center;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   margin-right: 8px;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s ease;
 }
 
 .taskBg .taskText {
@@ -132,6 +132,12 @@ body {
   /* color: yellow; */
   color: #999;
   opacity: 1;
+}
+
+.taskBg:hover .taskNumber {
+  color: white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .ch_importance,
@@ -262,6 +268,22 @@ body {
   cursor: pointer;
 }
 
+.del_underline {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  /* width: 20px; */
+  /* height: 3px; */
+  /* background-color: #e74c3c; */
+
+  border: 10px solid transparent;
+  border-bottom: 10px solid #e74c3c;
+}
+
+.days:hover {
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
 .dayName:hover .del_day,
 .days:hover .del_day {
   display: flex;
@@ -277,11 +299,18 @@ body {
 
 .dayName:hover .fa-trash-can,
 .days:hover .dayName .fa-trash-can {
-  animation: trashScale 1.5s linear infinite;
-  /* animation: trashTrans 1.5s linear infinite; */
+  animation: rotateTrasch 3s linear infinite;
+  /* animation: scaleTrasch 1.5s linear infinite; */
+  /* animation: translateTrasch 1.5s linear infinite; */
 }
 
-@keyframes trashScale {
+.dayName:hover .del_underline,
+.days:hover .del_underline {
+  display: block;
+  animation: scaleUnderline 3s linear infinite;
+}
+
+@keyframes scaleTrasch {
   from {
     transform: scale(1);
   }
@@ -292,15 +321,27 @@ body {
     transform: scale(1);
   }
 }
-@keyframes trashTrans {
+@keyframes scaleUnderline {
   from {
-    transform: translateY(10px);
+    transform: scale(0);
   }
   50% {
-    transform: translateY(0px);
+    transform: scale(1);
   }
   to {
-    transform: translateY(10px);
+    transform: scale(0);
+  }
+}
+
+@keyframes rotateTrasch {
+  from {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  to {
+    transform: rotateZ(0deg);
   }
 }
 

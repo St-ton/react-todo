@@ -15,6 +15,7 @@ export default function ToDoOneDay({ toDoNew, markDone, setUpdateData, deleteTas
 
         <div className="del_day" onClick={() => deleteDay(toDoNew[0].valueDate)}>
           <FontAwesomeIcon icon={faTrashCan} />
+          <div className="del_underline"></div>
         </div>
       </div>
       <div className="taskCont">

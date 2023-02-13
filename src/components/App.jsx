@@ -53,16 +53,16 @@ function App() {
   };
 
   const deleteTask = id => {
-    let conf = window.confirm('Are you sure to DELETE the Task ?');
-    if (conf) {
+    let confirmDelete = window.confirm('Are you sure to DELETE the Task ?');
+    if (confirmDelete) {
       let newTasks = toDo.filter(task => task.id !== id);
       setToDo(newTasks);
     }
   };
 
   const deleteDay = value => {
-    let conf = window.confirm('Are you sure to DELETE the Day ?');
-    if (conf) {
+    let confirmDelete = window.confirm('Are you sure to DELETE the Day ?');
+    if (confirmDelete) {
       let newToDo = toDo.filter(task => task.valueDate !== value);
       setToDo(newToDo);
     }
