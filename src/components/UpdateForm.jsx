@@ -10,22 +10,15 @@ export default function UpdateForm({
   changeDate,
 }) {
   return (
-    <>
+    <div>
       <div className="row formTable">
+        {/* <form onSubmit={addTask}> */}
         <div className="col">
-          <input
-            value={updateData && updateData.title}
-            onChange={e => {
-              changeTask(e);
-              // console.log(`1 ${e.target.value}`);
-            }}
-            className="form-control form-control-lg"
-          />
-
           <div className="row">
             <div className="row ch_importance">
               <p>Importance</p>
               <select
+                required="required"
                 name="import"
                 value={value}
                 onChange={e => {
@@ -43,6 +36,7 @@ export default function UpdateForm({
             <div className="row ch_calendar">
               <p>Week Day</p>
               <select
+                required="required"
                 value={valueDate}
                 onChange={e => {
                   changeDate(e);
@@ -61,22 +55,27 @@ export default function UpdateForm({
                 <option value="sun">Sunday</option>
               </select>
             </div>
+            <input
+              value={updateData && updateData.title}
+              onChange={e => {
+                changeTask(e);
+                // console.log(`1 ${e.target.value}`);
+              }}
+              className="form-control form-control-lg"
+            />
+          </div>
+          <div className="col-auto">
+            <button className="btn btn-lg btn-warning" onClick={cancelUpdate}>
+              Cancel
+            </button>
+            <button className="btn btn-lg btn-success" onClick={updateTask}>
+              Update
+            </button>
           </div>
         </div>
-        <div className="col-auto">
-          <button
-            className="btn btn-lg btn-success"
-            onClick={updateTask}
-            // onClick={() => updateTask(id, title, value, valueDate)}
-          >
-            Update
-          </button>
-          <button className="btn btn-lg btn-warning" onClick={cancelUpdate}>
-            Cancel
-          </button>
-        </div>
+        {/* </form> */}
       </div>
       <br />
-    </>
+    </div>
   );
 }

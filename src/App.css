@@ -61,7 +61,7 @@ body {
 }
 .form-control {
   margin-bottom: 20px;
-  max-width: 545px;
+  /* max-width: 545px; */
   border: 1px solid black;
 }
 
@@ -178,16 +178,14 @@ body {
   background-color: #e74c3c;
   border: 1px solid #e74c3c;
   color: white;
-  width: 163px;
+  width: 300px;
   height: 50px;
   border-radius: 23px;
   margin-right: 0px;
-  margin-top: 5px;
+  margin-top: 25px;
 }
 
 .btn-warning:hover {
-  background-color: red;
-  border: 1px solid red;
   color: white;
 }
 
@@ -206,12 +204,18 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.col input {
+  font-size: 22px;
+}
 
 .col-auto {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: baseline;
   margin-bottom: 20px;
   margin-left: 50px;
+  gap: 10px;
 }
 
 .formTable {

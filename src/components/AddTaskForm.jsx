@@ -49,7 +49,7 @@ export default function AddTaskForm({
                 value={newTask}
                 onChange={e => setNewTask(e.target.value)}
                 className="form-control"
-              />{' '}
+              />
             </div>
             <div className="col-auto">
               <button onClick={addTask} className="btn btn-lg btn-success">
