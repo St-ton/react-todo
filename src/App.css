@@ -20,11 +20,6 @@ body {
   color: aliceblue;
 }
 
-.footer {
-  width: 100%;
-  margin-bottom: -20px;
-}
-
 .App {
   text-align: center;
   /* margin-top: 20px; */
@@ -232,10 +227,10 @@ body {
   display: flex;
   max-width: 1088px;
   background: white;
-  margin-bottom: 15px;
   border-radius: 20px;
   border: none;
   margin: 10px auto;
+  gap: 10px;
 }
 
 .days p {
@@ -251,6 +246,12 @@ body {
   border: 1px solid #34495e;
   color: white;
   /* cursor: pointer; */
+}
+
+.taskCont {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-left: 10px; */
 }
 
 .ch_importance p,
@@ -275,8 +276,8 @@ body {
   display: none;
   position: absolute;
   text-align: center;
-  top: -15px;
-  left: -10px;
+  top: -10px;
+  left: 0px;
   color: #e74c3c;
   width: 40px;
   height: 40px;
@@ -285,18 +286,14 @@ body {
 
 .del_underline {
   position: absolute;
-  top: 30px;
+  top: 0px;
   left: 10px;
-  /* width: 20px; */
-  /* height: 3px; */
-  /* background-color: #e74c3c; */
-
   border: 10px solid transparent;
-  border-bottom: 10px solid #e74c3c;
+  border-top: 10px solid #e74c3c;
 }
 
 .days:hover {
-  box-shadow: 3px 3px 5px lightgrey;
+  box-shadow: 3px 3px 8px lightgrey, -3px -3px 8px lightgrey;
 }
 
 .dayName:hover .del_day,
@@ -314,33 +311,17 @@ body {
 
 .dayName:hover .fa-trash-can,
 .days:hover .dayName .fa-trash-can {
-  animation: rotateTrasch 3s linear infinite;
-  /* animation: scaleTrasch 1.5s linear infinite; */
-  /* animation: translateTrasch 1.5s linear infinite; */
+  animation: colorTrash 2s linear infinite;
 }
 
 .dayName:hover .del_underline,
 .days:hover .del_underline {
   display: block;
-  animation: scaleUnderline 3s linear infinite;
+  animation: scaleUnderline 2s linear infinite;
 }
 
-@keyframes scaleTrasch {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 @keyframes scaleUnderline {
   from {
-    transform: scale(0);
-  }
-  50% {
     transform: scale(1);
   }
   to {
@@ -348,20 +329,61 @@ body {
   }
 }
 
-@keyframes rotateTrasch {
+@keyframes colorTrash {
   from {
-    transform: rotateZ(0deg);
+    color: transparent;
   }
   50% {
-    transform: rotateZ(180deg);
+    color: #e74c3c;
   }
   to {
-    transform: rotateZ(0deg);
+    color: #e74c3c;
   }
 }
 
-.taskCont {
-  display: flex;
-  flex-wrap: wrap;
-  /* margin-left: 10px; */
+.footer {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.footer-wrapper a {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.footer-wrapper {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s linear;
+}
+
+.footer-inner {
+  width: 250px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  /* выдвигается слева 
+  top: 0;
+   left: -250px;*/
+  /* выдвигается снизу */
+  left: calc(50% - 125px);
+  bottom: -40px;
+  transition: all 0.7s linear;
+}
+
+.footer-wrapper:hover .footer-inner {
+  left: calc(50% - 125px);
+  /* выдвигается снизу */
+  bottom: 0px;
+}
+
+.footer-wrapper:hover {
+  color: transparent;
 }

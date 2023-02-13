@@ -3,6 +3,7 @@
 HW-0802
 [-Code-](<https://github.com/St-ton/react-todo/tree/master/src>) |
 [-WWW-](<https://st-ton.github.io/react-todo/>)<br/>
+[Figma-Maket](<https://www.figma.com/file/COheBOxihATqeFcfe3Q4mJ/%D0%B5%D0%B6%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%B8%D0%BA?node-id=0%3A1&t=L9eDGvgz1hTNiZ6v-0>)
 
 Необходимо реализовать приложение, позволяющее добавлять дела.
 При добавлении дела на определенный день недели добавляется соответствующий блок с днем недели.

@@ -161,6 +161,7 @@ function App() {
         />
       )}
       {toDo && toDo.length ? '' : 'No Tasks...'}
+
       <div className="days ">
         <Monday
           toDo={toDo}
@@ -233,7 +234,16 @@ function App() {
           deleteDay={deleteDay}
         />
       </div>
-      <div className="footer">To Do List App | 2023</div>
+      <div className="footer">
+        <div className="footer-wrapper">
+          ToDo List App | Link GihHub
+          <div className="footer-inner">
+            <a href="https://github.com/St-ton/react-todo/tree/master/src" target="_blank">
+              ToDo List App | Link GihHub
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
