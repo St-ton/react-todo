@@ -6,7 +6,8 @@ import { faCircleCheck, faPen, faTrashCan } from '@fortawesome/free-solid-svg-ic
 export default function ToDoOneDay({ toDoNew, markDone, setUpdateData, deleteTask, deleteDay }) {
   return (
     <>
-      <div className="dayName" onClick={() => deleteDay(toDoNew[0].valueDate)}>
+      {/* <div className="dayName" onClick={() => deleteDay(toDoNew[0].valueDate)}> */}
+      <div className="dayName">
         {toDoNew && toDoNew.length ? (
           <p>{(toDoNew[0].valueDate === '' ? 'Special' : toDoNew[0].valueDate).toUpperCase()}</p>
         ) : (
