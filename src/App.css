@@ -27,10 +27,10 @@ body {
 
 .App {
   text-align: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   /* margin-bottom: 50px; */
   position: relative;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #1abc9c;
 }
 
@@ -142,8 +142,8 @@ body {
 
 .ch_importance,
 .ch_calendar {
-  max-width: 180px;
-  margin: 0 5px;
+  max-width: 165px;
+  /* margin: 0 5px; */
 }
 .select {
   width: 150px;
@@ -167,7 +167,7 @@ body {
 
 .btn-success {
   background-color: #1abc9c;
-  width: 163px;
+  width: 300px;
   height: 50px;
   border-radius: 23px;
   margin-right: 0px;
@@ -184,28 +184,39 @@ body {
   margin-right: 0px;
   margin-top: 5px;
 }
+
 .btn-warning:hover {
   background-color: red;
   border: 1px solid red;
   color: white;
 }
-.col {
-  max-width: 545px;
-}
-
-.col-auto {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
 
 .row {
   /* display: flex; */
   justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+.row input {
+  margin-right: 0;
+}
+
+.col {
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-auto {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  margin-left: 50px;
 }
 
 .formTable {
+  /* display: flex; */
+  /* justify-content: space-between; */
   background: #ecf0f1;
   padding: 20px 62px 10px 62px;
   border-radius: 20px;

@@ -33,7 +33,9 @@ export default function UpdateForm({
                   // console.log(`2 ${e.target.value}`);
                 }}
               >
-                <option selected>Select</option>
+                <option value="" selected>
+                  Select
+                </option>
                 <option value="important">important</option>
                 <option value="current">non-important</option>
               </select>
@@ -47,7 +49,9 @@ export default function UpdateForm({
                   // console.log(`3 ${e.target.value}`);
                 }}
               >
-                <option selected>Select</option>
+                <option value="" selected>
+                  Select
+                </option>
                 <option value="mon">Monday</option>
                 <option value="tue">Tuesday</option>
                 <option value="wed">Wednesday</option>
